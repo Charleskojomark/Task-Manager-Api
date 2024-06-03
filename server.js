@@ -19,6 +19,10 @@ mongoose.connect(process.env.MONGODB_URI, {
   console.error('Failed to connect to MongoDB', err);
 });
 
+
+const taskRoutes = require('./routes/taskRoutes');
+app.use('/api', taskRoutes);
+
 app.get('/', (req, res) => {
   res.send('Task Manager API');
 });
