@@ -5,7 +5,7 @@
 1. Clone the repository:
     ```sh
     git clone https://github.com/Charleskojomark/Task-Manager-Api.git
-    cd task-manager-api
+    cd Task-Manager-Api
     ```
 
 2. Install dependencies:
