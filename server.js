@@ -19,7 +19,6 @@ mongoose.connect(process.env.MONGODB_URI, {
   console.error('Failed to connect to MongoDB', err);
 });
 
-
 const taskRoutes = require('./routes/taskRoutes');
 app.use('/api', taskRoutes);
 
@@ -27,6 +26,10 @@ app.get('/', (req, res) => {
   res.send('Task Manager API');
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
+
+module.exports = app;

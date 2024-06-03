@@ -79,7 +79,7 @@ router.delete('/tasks/:id', async (req, res) => {
   }
 });
 
-// Get the next three tasks due
+// 
 router.get('/tasks/next-three', async (req, res) => {
   try {
     const tasks = await Task.find().sort({ due_date: 1 }).limit(3);
